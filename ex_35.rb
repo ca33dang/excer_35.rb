@@ -4,8 +4,7 @@ def gold_room
 	print "> "
 	choice = $stdin.gets.chomp
 
-	# this line has a bug, so fix it
-	if choice.include?("0") || choice.include?("1")
+	if choice.include?("0") || choice.include?("50")
 		how_much = choice.to_i
 	else
 		dead("Man, learn to type a number.")
@@ -32,7 +31,7 @@ def bear_room
 
 		if choice == "take honey"
 			dead("The bear looks at you then slap your face off.")
-		elsif choice == "Taunt bear" && !bear_moved
+		elsif choice == "taunt bear" && !bear_moved
 			puts "The bear has moved from the door. You can go through it now."
 			bear_moved = true
 		elsif choice == "taunt bear" && bear_moved
